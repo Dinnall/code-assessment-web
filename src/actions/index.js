@@ -39,7 +39,7 @@ export const checkout = products => (dispatch, getState) => {
   })
 }
 
-export const removeFromCart = (productId,quantity)=>{
+export const removeFromCart = (productId,quantity)=> (dispatch, getState) =>{
   dispatch({
     type: types.REMOVE_FROM_CART,
     productId,

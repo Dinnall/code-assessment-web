@@ -3,9 +3,6 @@
  */
 // import _products from './products.json'
 
-
-
-
 // Replace static API for fetched JSON
 
 let inventoryImages = [
@@ -21,7 +18,7 @@ export default {
     .then(inventory =>{
 
       inventory.map((item, index) =>{
-         item.inventoryImages = inventoryImages[index].inventoryImage
+        return item.inventoryImages = inventoryImages[index].inventoryImage
         });
       console.log("List all inventory w/ image :",inventory)
       cb(inventory)
