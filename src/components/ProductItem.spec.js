@@ -25,8 +25,10 @@ let productProps
 describe('ProductItem component', () => {
   beforeEach(() => {
     productProps = {
-      title: 'Product 1',
-      price: 9.99,
+      productTitle: 'Product 1',
+      price: {
+        value:9.99
+      },
       inventory: 6
     }
   })
