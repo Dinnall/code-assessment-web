@@ -12,12 +12,12 @@ describe('reducers', () => {
           products: [
             {
               id: 1,
-              title: 'Product 1',
+              productTitle: 'Product 1',
               inventory: 2
             },
             {
               id: 2,
-              title: 'Product 2',
+              productTitle: 'Product 2',
               inventory: 1
             }
           ]
@@ -27,12 +27,12 @@ describe('reducers', () => {
       it('contains the products from the action', () => {
         expect(products.getProduct(state, 1)).toEqual({
           id: 1,
-          title: 'Product 1',
+          productTitle: 'Product 1',
             inventory: 2
         })
         expect(products.getProduct(state, 2)).toEqual({
           id: 2,
-          title: 'Product 2',
+          productTitle: 'Product 2',
             inventory: 1
         })
       })
@@ -45,11 +45,11 @@ describe('reducers', () => {
         expect(products.getVisibleProducts(state)).toEqual([
           {
             id: 1,
-            title: 'Product 1',
+            productTitle: 'Product 1',
             inventory: 2
           }, {
             id: 2,
-            title: 'Product 2',
+            productTitle: 'Product 2',
             inventory: 1
           }
         ])
@@ -65,11 +65,11 @@ describe('reducers', () => {
           expect(products.getVisibleProducts(state)).toEqual([
             {
               id: 1,
-              title: 'Product 1',
+              productTitle: 'Product 1',
               inventory: 1
             }, {
               id: 2,
-              title: 'Product 2',
+              productTitle: 'Product 2',
               inventory: 1
             }
           ])

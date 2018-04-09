@@ -16,15 +16,21 @@ describe('selectors', () => {
           byId: {
             1: {
               id: 1,
-              price: 1.99
+              price: {
+                value: 1.99
+              }
             },
             2: {
               id: 1,
-              price: 4.99
+              price: {
+                value: 4.99
+              }
             },
             3: {
               id: 1,
-              price: 9.99
+              price: {
+                value: 9.99
+              }
             }
           }
         }
@@ -48,15 +54,20 @@ describe('selectors', () => {
           byId: {
             1: {
               id: 1,
-              price: 1.99
-            },
+              price: {
+                value: 1.99
+              }            },
             2: {
               id: 1,
-              price: 4.99
+              price: {
+                value: 4.99
+              }
             },
             3: {
               id: 1,
-              price: 9.99
+              price: {
+                value: 9.99
+              }
             }
           }
         }
@@ -65,17 +76,23 @@ describe('selectors', () => {
       expect(getCartProducts(state)).toEqual([
         {
           id: 1,
-          price: 1.99,
+            price: {
+              value: 1.99
+            },
           quantity: 4
         },
         {
           id: 1,
-          price: 4.99,
+          price: {
+            value: 4.99
+          },
           quantity: 2
         },
         {
           id: 1,
-          price: 9.99,
+          price: {
+            value: 9.99
+          },
           quantity: 1
         }
       ])
