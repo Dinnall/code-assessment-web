@@ -11,16 +11,12 @@ import ProductsList from '../components/ProductsList'
 const ProductsContainer = ({ showCart, products, totalCartItems, addToCart, toggleCart }) => (
   showCart ? null :
 
-  <div className="storeFront">
-    <div className="header">
-      <h2 style={{ flexGrow:1, marginBottom:0, color:'#222222', marginTop:'1rem' }}>Acme Store</h2>
-      <a
-        onClick={toggleCart}
-        className="span-rightBottom">
+  <div>
+    <div >
+      <h2 >Acme Store</h2>
+      <a onClick={toggleCart}>
         <span>
-          <img
-            src="./img/cart.svg"
-            style={{ width:'20px', marginRight:'6px', position:'relative', top:'2px' }}></img>
+          <img src="./images/cartblue.png"></img>
           {totalCartItems > 0 ? 'You have ' + totalCartItems + ' item' + (totalCartItems > 1 ? 's' : '') + ' in your cart' : 'Your cart is empty'}
         </span>
       </a>
@@ -33,7 +29,7 @@ const ProductsContainer = ({ showCart, products, totalCartItems, addToCart, togg
         <ProductItem
           key={product.id}
           product={product}
-          heroImage={product.productImage}
+          images={product.inventoryImages}
           onAddToCartClicked={() => addToCart(product.id)} />
       )}
     </ProductsList>

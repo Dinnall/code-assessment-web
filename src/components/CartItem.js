@@ -1,45 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuantityClicked, onIncreaseQuantityClicked, heroImage }) => (
+const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuantityClicked, onIncreaseQuantityClicked, images }) => (
 
-  <div className="cartItem" >
-      <div className="cartItemBlock">
-        <div
-          className="productImage"
-          style={{backgroundImage: 'url("./img/' + heroImage + '")'}}>
-        </div>
-
-        <div className="productInfo">
-            <h3 style={{ marginBottom:'1rem' }}>{product.productTitle}</h3>
-            <span
-              className="copyBlock"
-              style={{ color:'#202020', flexGrow:1}}>
+  <div>
+      <div>
+         <div>
+            <h3>{product.productTitle}</h3>
+            <span>
               &#36;{product.price.value}
             </span>
+             <img src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
 
-          <a
-            className="copyBlock"
-            style={{ alignSelf:'end', color:'#CC1D39'}}
-            onClick={onRemoveClicked}>
+          <a onClick={onRemoveClicked}>
             Remove
           </a>
         </div>
       </div>
-      <div className="cartQuantity">
+      <div>
         <button
-        className="button-cartQuantity cartItemDecrease"
         onClick={onDecreaseQuantityClicked}
         disabled={product.quantity > 0 ? '' : 'disabled'}>
           -
         </button>
 
-        <div className="cartItemQuantity">
-          <span className="quantityOutput">{product.quantity}</span>
+        <div>
+          <span>{product.quantity}</span>
         </div>
 
         <button
-          className="button-cartQuantity cartItemIncrease"
           onClick={onIncreaseQuantityClicked}
           disabled={product.inventory > 0 ? '' : 'disabled'}>
           +
@@ -59,7 +48,7 @@ CartItem.propTypes = {
   onRemoveClicked: PropTypes.func.isRequired,
   onIncreaseQuantityClicked: PropTypes.func.isRequired,
   onDecreaseQuantityClicked: PropTypes.func.isRequired,
-  heroImage: PropTypes.string.isRequired
+  images: PropTypes.string.isRequired
 }
 
 export default CartItem
