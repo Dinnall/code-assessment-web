@@ -1,26 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuantityClicked, onIncreaseQuantityClicked, images }) => (
+const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuantityClicked, onIncreaseQuantityClicked, heroImage }) => (
 
-  <div className="productItem">
+  <div className="cartItem" >
+      <div className="cartItemBlock">
     <div className= "finalCheckOutPhoto" src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
-    <h4>{product.productTitle}</h4>
-      <p className="price">&#36;{product.price.value}</p>
-      <p  className="remove"  onClick={onRemoveClicked}> Remove </p>
-       <div  className="quantity">
+       <div className="productInfo">
+            <h3 style={{ marginBottom:'1rem' }}>{product.productTitle}</h3>
+          <a
+            className="copyBlock"
+            style={{ alignSelf:'end', color:'#CC1D39'}}
+            onClick={onRemoveClicked}>
+            Remove
+          </a>
+        </div>
+      </div>
+      <div className="cartQuantity">
         <button
-        className="subtract"
+        className="button-cartQuantity cartItemDecrease"
         onClick={onDecreaseQuantityClicked}
         disabled={product.quantity > 0 ? '' : 'disabled'}>
           -
         </button>
-
-        <div>
-          {product.quantity}
+       <div className="cartItemQuantity">
+          <span className="quantityOutput">{product.quantity}</span>
         </div>
-          <button
-          className="add"
+
+        <button
+          className="button-cartQuantity cartItemIncrease"
           onClick={onIncreaseQuantityClicked}
           disabled={product.inventory > 0 ? '' : 'disabled'}>
           +
@@ -40,7 +48,7 @@ CartItem.propTypes = {
   onRemoveClicked: PropTypes.func.isRequired,
   onIncreaseQuantityClicked: PropTypes.func.isRequired,
   onDecreaseQuantityClicked: PropTypes.func.isRequired,
-  images: PropTypes.string.isRequired
+  heroImage: PropTypes.string.isRequired
 }
 
 export default CartItem
