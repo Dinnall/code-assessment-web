@@ -3,19 +3,14 @@ import PropTypes from 'prop-types'
 
 const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuantityClicked, onIncreaseQuantityClicked, images }) => (
 
-  <div>
-      <div>
-         <div>
-            <h3>{product.productTitle}</h3>
-              <p className="price">&#36;{product.price.value}</p>
-            <img src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
-            <a onClick={onRemoveClicked}>
-            Remove
-          </a>
-        </div>
-      </div>
-      <div>
+  <div className="productItem">
+    <div className= "finalCheckOutPhoto" src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
+    <h4>{product.productTitle}</h4>
+      <p className="price">&#36;{product.price.value}</p>
+      <p  className="remove"  onClick={onRemoveClicked}> Remove </p>
+       <div  className="quantity">
         <button
+        className="subtract"
         onClick={onDecreaseQuantityClicked}
         disabled={product.quantity > 0 ? '' : 'disabled'}>
           -
@@ -24,8 +19,8 @@ const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuant
         <div>
           {product.quantity}
         </div>
-
-        <button
+          <button
+          className="add"
           onClick={onIncreaseQuantityClicked}
           disabled={product.inventory > 0 ? '' : 'disabled'}>
           +
