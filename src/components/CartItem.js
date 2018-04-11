@@ -7,12 +7,9 @@ const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuant
       <div>
          <div>
             <h3>{product.productTitle}</h3>
-            <span>
-              &#36;{product.price.value}
-            </span>
-             <img src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
-
-          <a onClick={onRemoveClicked}>
+              <p className="price">&#36;{product.price.value}</p>
+            <img src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
+            <a onClick={onRemoveClicked}>
             Remove
           </a>
         </div>
@@ -25,7 +22,7 @@ const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuant
         </button>
 
         <div>
-          <span>{product.quantity}</span>
+          {product.quantity}
         </div>
 
         <button

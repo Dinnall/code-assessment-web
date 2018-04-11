@@ -8,12 +8,13 @@ const Cart  = ({ products, total, onToggleCartClicked, onCheckoutClicked, onRemo
   return (
     <div className="final_CheckOut">
       <div className="cartInfo">
+
        <div className="close">
         <a onClick={onToggleCartClicked}> </a>
         </div>
+        <h3>Your cart</h3>
 
       <div>
-        <h3>Your cart</h3>
         <hr/>
         {hasProducts ?
           <div className="cart">
@@ -46,7 +47,6 @@ const Cart  = ({ products, total, onToggleCartClicked, onCheckoutClicked, onRemo
           </div>
         :
           <div>
-            <img src="#" alt="" />
             <p >Please add some products<br/>To your cart</p>
           </div>
         }
