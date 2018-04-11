@@ -12,19 +12,12 @@ const ProductsContainer = ({ showCart, products, totalCartItems, addToCart, togg
   showCart ? null :
 
   <div>
-    <div >
       <h2>Acme Store</h2>
-      <div className="yourCart" onClick={toggleCart}>
-
-          <img src="./images/cartgray.png" alt="shopping cart"></img>
+     <div id="yourCart" onClick={toggleCart}>
           {totalCartItems > 0 ? 'You have ' + totalCartItems + ' item' + (totalCartItems > 1 ? 's' : '') + ' in your cart' : 'Your cart is empty'}
-
-      </div>
     </div>
-
-    <hr/>
-
-    <ProductsList>
+     <hr/>
+     <ProductsList>
       {products.map((product, index) =>
         <ProductItem
           key={product.id}

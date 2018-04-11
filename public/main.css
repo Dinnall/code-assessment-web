@@ -26,6 +26,13 @@ h3, h4{
   float:left;
 }
 
+hr{
+  background-color: #dadada;
+  height:1px;
+  border:0;
+  clear:both;
+  margin-bottom: 30px;
+}
 
 #yourCart {
   font-size: 14px;
@@ -44,7 +51,6 @@ h3, h4{
 }
 #yourCart:hover {
   color:#407FC0;
-  cursor: url(images/cursor.png), auto;
 }
 #yourCart:hover::before {
   content:'';
