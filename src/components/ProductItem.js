@@ -3,17 +3,15 @@ import PropTypes from 'prop-types'
 
 const ProductItem = ({ product, onAddToCartClicked, images }) => (
 
-  <div>
-     <div>
+  <div className="product">
+      <img  className="productImage" src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
+        <div className="productDetail">
       <div>
           <h3>{product.productTitle}</h3>
-          <span>
             <h5>&#36;{product.price.value}</h5>
-          </span>
         </div>
 
         <p>{product.inventory ? `${product.inventory}` + " REMAINING" : ' '}</p>
-        <img src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
         <button
           onClick={onAddToCartClicked}
           disabled={product.inventory > 0 ? '' : 'disabled'}>

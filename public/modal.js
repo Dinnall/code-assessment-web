@@ -1,10 +1,12 @@
-$(document.ready(function(){
-  $('#cartModal').hide();
+$(document).ready(function() {
 
-  $('#shoppingCart').on('click',function(){
-     $('cartModal').show();
+  $("#final_CheckOut").hide();
+
+  $("#yourCart").on("click", function(){
+    $("#final_CheckOut").show();
   });
-  $('.close').on('click',function(){
-    $('#cartModal').hide()
-  })
-})
+  $(".close").on("click", function(){
+    $("#final_CheckOut").hide();
+  });
+
+});

@@ -16,7 +16,7 @@ const ProductsContainer = ({ showCart, products, totalCartItems, addToCart, togg
       <h2 >Acme Store</h2>
       <a onClick={toggleCart}>
         <span>
-          <img src="./images/cartblue.png"></img>
+          <img src="./images/cartblue.png" alt="shopping cart"></img>
           {totalCartItems > 0 ? 'You have ' + totalCartItems + ' item' + (totalCartItems > 1 ? 's' : '') + ' in your cart' : 'Your cart is empty'}
         </span>
       </a>

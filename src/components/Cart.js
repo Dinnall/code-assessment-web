@@ -6,18 +6,17 @@ const Cart  = ({ products, total, onToggleCartClicked, onCheckoutClicked, onRemo
   const hasProducts = products.length > 0
 
   return (
-    <div>
-      <div>
-        <a onClick={onToggleCartClicked}>
-          <img src="./images/cartgray.png"/>
-        </a>
-      </div>
+    <div className="final_CheckOut">
+      <div className="cartInfo">
+       <div className="close">
+        <a onClick={onToggleCartClicked}> </a>
+        </div>
 
       <div>
         <h3>Your cart</h3>
         <hr/>
         {hasProducts ?
-          <div>
+          <div className="cart">
             {products.map((product, index) =>
               <CartItem
                 product={product}
@@ -29,7 +28,7 @@ const Cart  = ({ products, total, onToggleCartClicked, onCheckoutClicked, onRemo
                 key={product.id}
               />
             )}
-
+             <div className="cartBottom">
             <hr/>
             <span >Subtotal:</span><span >&#36;{total}</span>
             <br/><br/>
@@ -37,6 +36,7 @@ const Cart  = ({ products, total, onToggleCartClicked, onCheckoutClicked, onRemo
             <hr/>
             <span >Total:</span><span >&#36;{(total * 1.0882).toFixed(2)}</span>
             <br/>
+             </div>
             <button
               className="button-checkout"
               onClick={onCheckoutClicked}
@@ -46,10 +46,11 @@ const Cart  = ({ products, total, onToggleCartClicked, onCheckoutClicked, onRemo
           </div>
         :
           <div>
-            <img src="#"/>
+            <img src="#" alt="" />
             <p >Please add some products<br/>To your cart</p>
           </div>
         }
+        </div>
       </div>
     </div>
   )
