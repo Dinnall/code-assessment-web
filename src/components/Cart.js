@@ -7,8 +7,8 @@ const Cart  = ({ products, total, onToggleCartClicked, onCheckoutClicked, onRemo
 
   return (
     <div id="final_CheckOut">
-      <div className="cartInfo">
        <div className="close">
+      <div className="cartInfo">
         <a onClick={onToggleCartClicked}> </a>
         </div>
         <h3>Your cart</h3>

@@ -13,7 +13,7 @@ const ProductsContainer = ({ showCart, products, totalCartItems, addToCart, togg
 
   <div>
       <h2>Acme Store</h2>
-     <div id="yourCart" onClick={toggleCart}>
+     <div id="cartTotal" onClick={toggleCart}>
           {totalCartItems > 0 ? 'You have ' + totalCartItems + ' item' + (totalCartItems > 1 ? 's' : '') + ' in your cart' : 'Your cart is empty'}
     </div>
      <hr/>
