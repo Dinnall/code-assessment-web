@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuantityClicked, onIncreaseQuantityClicked, heroImage }) => (
+const CartItem = ({ product, onCheckoutClicked, onRemoveClicked, onDecreaseQuantityClicked, onIncreaseQuantityClicked, images }) => (
 
   <div className="cartItem" >
       <div className="cartItemBlock">
-    <div className= "finalCheckOutPhoto" src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
+    <div  />
+           <img  className="finalCheckOutPhoto" src={`./images/${product.inventoryImages}`} alt={product.productTitle} />
+
        <div className="productInfo">
             <h3 style={{ marginBottom:'1rem' }}>{product.productTitle}</h3>
           <a
@@ -48,7 +50,7 @@ CartItem.propTypes = {
   onRemoveClicked: PropTypes.func.isRequired,
   onIncreaseQuantityClicked: PropTypes.func.isRequired,
   onDecreaseQuantityClicked: PropTypes.func.isRequired,
-  heroImage: PropTypes.string.isRequired
+  images: PropTypes.string.isRequired
 }
 
 export default CartItem
